@@ -25,7 +25,6 @@ const b2u = (binary) => {
 
   const steps1 = arr.map((item, index) => `${item} * 2^${index}`);
   const steps2 = arr.map((item, index) => item * 2 ** index);
-  console.log(steps1, steps2);
 
   result = `${steps1.reverse().join(" + ")} = ${steps2
     .reverse()
@@ -43,7 +42,6 @@ const b2s = (binary) => {
 
   const steps1 = arr.map((item, index) => `${item} * 2^${index}`);
   const steps2 = arr.map((item, index) => item * 2 ** index);
-  console.log(steps1, steps2);
 
   result = `(-1^${sign})(${steps1
     .reverse()
@@ -63,11 +61,10 @@ const b2o = (binary) => {
 
   const steps1 = arr.map((item, index) => `${item} * 2^${index}`);
   const steps2 = arr.map((item, index) => item * 2 ** index);
-  console.log(steps1, steps2);
 
   result = `-${sign} * (2^${arr.length} - 1) + ${steps1
     .reverse()
-    .join(" + ")} = ${-sign * (sign ** arr.length - 1)} + ${steps2
+    .join(" + ")} = ${-sign * (2 ** arr.length - 1)} + ${steps2
     .reverse()
     .join(" + ")} = ${
     steps2.reduce((acc, item) => acc + item, 0) + -sign * (2 ** arr.length - 1)
@@ -85,10 +82,9 @@ const b2t = (binary) => {
 
   const steps1 = arr.map((item, index) => `${item} * 2^${index}`);
   const steps2 = arr.map((item, index) => item * 2 ** index);
-  console.log(steps1, steps2);
 
   result = `-${sign} * (2^${arr.length}) + ${steps1.reverse().join(" + ")} = ${
-    -sign * sign ** arr.length
+    -sign * 2 ** arr.length
   } + ${steps2.reverse().join(" + ")} = ${
     steps2.reduce((acc, item) => acc + item, 0) + -sign * 2 ** arr.length
   }`;
