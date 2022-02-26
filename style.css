@@ -1,0 +1,10 @@
+body {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+p {
+  line-height: 1.2;
+  font-size: 1.5rem;
+}
